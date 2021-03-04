@@ -1,0 +1,142 @@
+:root {
+  --greish: #393e46;
+  --turquoise: #4ecc;
+  --bluish: #232931;
+  --lilac-luster: #875c74;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--greish);
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+h1,
+p {
+  color: var(--turquoise);
+}
+
+h1 {
+  margin: 2.5%;
+  font-family: "Lobster", cursive;
+  text-shadow: 5px 0 var(--bluish);
+  font-size: calc(3rem + 3vw);
+}
+
+p {
+  font-family: "Indie Flower", cursive;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.title,
+.content,
+.player1,
+.player2,
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_roll,
+h3,
+span,
+a,
+input[type="text"] {
+  color: var(--bluish);
+  font-family: "Lobster";
+  font-size: 1.5rem;
+}
+
+/* //////////////////// CONTENT DIV ////////////////////*/
+.content {
+  width: 60%;
+  margin: auto;
+}
+
+/* //////////////////// PLAYERS DIV ////////////////////*/
+.player1,
+.player2 {
+  flex: 1;
+  flex-direction: column;
+}
+
+img[src*="img/dice"] {
+  width: 55%;
+}
+
+/* //////////////////// BUTTON DIV ////////////////////*/
+.btn_container {
+  margin-top: 4%;
+}
+
+.btn_roll {
+  font-size: 2rem;
+  border-radius: 0.7rem;
+  padding: 0.2rem 1rem;
+  font-weight: bold;
+}
+
+.btn_roll:active {
+  position: relative;
+  bottom: 0.3rem;
+  right: 0.3rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem var(--greish);
+}
+
+/* //////////////////// NAMES DIV ////////////////////*/
+.input_container {
+  position: absolute;
+  bottom: 22%;
+  left: -17.3%;
+  background-color: white;
+  padding: 0 0 0 1.4%;
+  width: 20%;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  border: 5px dashed var(--turquoise);
+  border-left: none;
+  transition: transform 2s;
+  display: flex;
+  text-align: center;
+}
+
+.input_container:hover {
+  transform: translateX(78%);
+}
+
+div.main_input_container {
+  width: 75%;
+  padding-right: 15px;
+  border-right: 5px dashed var(--turquoise);
+}
+
+input[type="text"] {
+  width: 50%;
+}
+
+.name2 input[type="text"] {
+  margin-bottom: 1.4rem;
+}
+
+.name1,
+.name2 {
+  padding: 5% 0;
+}
+
+a.flange {
+  text-decoration: none;
+  position: absolute;
+  transform: rotate(90deg);
+  transform-origin: right bottom;
+  bottom: 16%;
+  left: 26%;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
