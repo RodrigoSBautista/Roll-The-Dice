@@ -48,8 +48,8 @@ let paragraph1 = document.querySelector("div.player1 > p");
 let paragraph2 = document.querySelector("div.player2 > p");
 let nameWritten;
 
-if (localStorage.name1 !== "") { paragraph1.textContent = localStorage.name1} 
-if (localStorage.name2 !== "") { paragraph2.textContent = localStorage.name2}
+if (localStorage.name1 !== undefined) { paragraph1.textContent = localStorage.name1} 
+if (localStorage.name2 !== undefined) { paragraph2.textContent = localStorage.name2}
 
 name1.addEventListener("keyup", function(){
     paragraph1.textContent = name1.value[0].toUpperCase() + name1.value.slice(1);
@@ -64,7 +64,7 @@ name2.addEventListener("keyup", function(){
 })
 
 function rightName(theName, defaultName) {
-    if (theName === "") {
+    if (theName == "" || theName == undefined) {
         return defaultName
     } else if (theName !== "") {
         return  theName
