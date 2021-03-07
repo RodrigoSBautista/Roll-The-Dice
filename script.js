@@ -18,9 +18,9 @@ btn_roll.addEventListener("mouseup", function(){
     if (number1 == number2) {
         result.textContent = `It's a tie! 😅`;
     } else if (number1 > number2) {
-        result.textContent = `The winner is ${rightName(name1.value, "Player1")} ${randomEmoji()}`;
+        result.textContent = `The winner is ${rightName(localStorage.name1,"Player1")} ${randomEmoji()}`;
     } else {
-        result.textContent = `The winner is ${rightName(name2.value,"Player2")} ${randomEmoji()}`;
+        result.textContent = `The winner is ${rightName(localStorage.name2,"Player2")} ${randomEmoji()}`;
     }
     
 })
@@ -42,23 +42,26 @@ function randomEmoji() {
 }
 
 ///////////////////////////// DEFINING NAME /////////////////////////////
-
 let name1 = document.querySelector("div.name1 > input");
 let name2 = document.querySelector("div.name2 > input");
 let paragraph1 = document.querySelector("div.player1 > p");
 let paragraph2 = document.querySelector("div.player2 > p");
+let nameWritten;
+
+if (localStorage.name1 !== "") { paragraph1.textContent = localStorage.name1} 
+if (localStorage.name2 !== "") { paragraph2.textContent = localStorage.name2}
 
 name1.addEventListener("keyup", function(){
     paragraph1.textContent = name1.value[0].toUpperCase() + name1.value.slice(1);
-    localStorage.name1 = paragraph1;
+    nameWritten = paragraph1.textContent;
+    localStorage.name1 = nameWritten;
 })
-
 
 name2.addEventListener("keyup", function(){
     paragraph2.textContent = name2.value[0].toUpperCase() + name2.value.slice(1);
-    localStorage.name2 = paragraph2;
+    nameWritten = paragraph2.textContent
+    localStorage.name2 = nameWritten;
 })
-
 
 function rightName(theName, defaultName) {
     if (theName === "") {
